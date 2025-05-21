@@ -1,0 +1,127 @@
+/* Default Light Mode Colors */
+:root {
+  --bg: #f5f6fa;
+  --text: #2d3436;
+  --primary: #00cec9;
+  --secondary: #ffeaa7;
+  --btn: #0984e3;
+  --x-color: #d63031;  /* Red X */
+  --o-color: #0984e3;  /* Blue O */
+  --box-bg: #dfe6e9;
+}
+
+/* Dark Mode Overrides */
+body.dark {
+  --bg: #2d3436;
+  --text: #dfe6e9;
+  --primary: #00cec9;
+  --secondary: #636e72;
+  --btn: #74b9ff;
+  --x-color: #ff7675;  /* Light red X */
+  --o-color: #74b9ff;  /* Light blue O */
+  --box-bg: #3d3d3d;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-height: 100vh;
+  padding: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+  margin: 20px 0;
+  font-size: 2.5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: var(--box-bg);
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  color: var(--text);
+}
+
+.box:hover {
+  background-color: var(--primary);
+}
+
+.box.x {
+  color: var(--x-color);
+}
+
+.box.o {
+  color: var(--o-color);
+}
+
+button {
+  background-color: var(--btn);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--primary);
+}
+
+.msg-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#msg {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background-color: var(--btn);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--primary);
+}
